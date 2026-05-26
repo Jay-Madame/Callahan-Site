@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Me!</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <div id="loading-screen">
+      <!-- Replace "loading.gif" with the path to your GIF -->
+      <img id="cinna-loading-gif" src="assets/cinnaLoad.gif" alt="Loading..." />
+      <p id="loading-text">LOADING ...</p>
+      <div id="progress-container">
+        <div id="progress-bar"></div>
+      </div>
+    </div>
+
+    <main class="container">
+      <div id="dev-name">
+        <img
+          id="dev-name"
+          src="assets/DevName.png"
+          alt="Dev Name of Jewell Callahan"
+        />
+      </div>
+
+      <div id="main-content">
+        <img
+          id="floating-cinna"
+          src="assets/cinnamorollFloating.gif"
+          alt="Pixelated cinnamoroll floating"
+        />
+
+        <p style="font-size: 20px">
+          <span class="gradient-text">
+            I’m a rising developer who is passionate about outreach, and would
+            love to get involved in the community :) Feel free to reach out to
+            me regarding a community outreach opportunity!</span
+          >
+        </p>
+      </div>
+
+      <div id="links-on-site">
+        <a href="page.html"
+          ><img
+            src="assets/Workbooks-Graphic.png"
+            alt="A graphic of the words workbooks"
+        /></a>
+        &emsp; &emsp;
+        <a href="page.html"
+          ><img
+            src="assets/LearningResources-Graphic.png"
+            alt="A graphic of the words learning resourcs"
+        /></a>
+      </div>
+
+      <div id="contact-info">
+        <ul>
+          <li>
+            <a href="resume.html"><img src="assets/Resume.png" /></a>
+          </li>
+          <li>
+            <a href="mailto:jewellcallahan@gmail.com"
+              ><img src="assets/MailIcon.png" alt="Email me"
+            /></a>
+          </li>
+          <li>
+            <a href="https://github.com/Jay-Madame"
+              ><img src="assets/GHicon.png" alt="link to Github"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/jewell-callahan-a12490294/"
+              ><img src="assets/LinkedInicon.png" alt="LinkedIn"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </main>
+
+    <script>
+      // Fetch the lines file, pick one at random, drop it into #loading-text
+      fetch("loading_lines.txt")
+        .then((response) => response.text())
+        .then((text) => {
+          const lines = text.split("\n").filter((line) => line.trim() !== "");
+          const randomLine = lines[Math.floor(Math.random() * lines.length)];
+          document.getElementById("loading-text").textContent = randomLine;
+        })
+        .catch((err) => {
+          console.error("Could not load loading_lines.txt:", err);
+          // The HTML default "LOADING ..." stays visible if fetch fails
+        });
+
+      // Hide loader and reveal main content after 2 seconds
+      setTimeout(function () {
+        document.getElementById("loading-screen").classList.add("hidden");
+        document.getElementById("main-content").style.display = "block";
+      }, 2000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+/*fonts*/
+
+@font-face {
+  font-family: "PixelFont";
+  src: url("../fonts/RasterForgeRegular-JpBgm.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("../fonts/FuturaRegular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../fonts/GothamThin.otf") format("opentype");
+}
+
+/* Loading shtuff */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#loading-gif {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+#loading-text {
+  font-family: "PixelFont", sans-serif;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#progress-container {
+  width: 300px;
+  height: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #4caf50;
+  animation: fill 1.5s linear forwards;
+}
+
+@keyframes fill {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Main content styling */
+
+body {
+  min-height: 100vh;
+  font-family: "Futura", sans-serif;
+  font-size: 16px;
+  background: linear-gradient(to bottom, #e3f3ff, #98c8ff);
+}
+
+#main-content {
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding-top: 0px;
+  padding: 30px;
+  margin: 40px;
+  margin-right: 60px;
+  margin-left: 60px;
+  font-family: "Gotham", sans-serif;
+  font-size: 37px;
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+  background: -webkit-linear-gradient(#5e9fcf, #5482b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#dev-name {
+  text-align: center;
+  font-size: 120px;
+  background: -webkit-linear-gradient(#5e9fcf, #98c8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#links-on-site {
+  a {
+    font-size: 48px;
+    color: #5290c9;
+  }
+  text-align: center;
+  text-decoration: none;
+}
+
+#contact-info {
+  text-align: center;
+}
+
+#contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#contact-info img {
+  width: 15px;
+  height: 15px;
+}
