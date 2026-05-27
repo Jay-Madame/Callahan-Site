@@ -176,18 +176,41 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: repeat(6, 1fr);
   padding: 10px;
 }
-.grid-container div {
+
+.grid-container > a {
+  grid-column: span 2;
   margin: 10px;
-  background-color: #f1f1f1;
-  border: 1px solid black;
+  background-color: #cbcff2;
+  border: 2px solid white;
   border-radius: 10px;
   padding: 10px;
+  color: white;
   font-size: 30px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    filter 0.3s ease;
 }
+
+.grid-container > a:hover {
+  background-color: #dde7ff;
+  transform: scale(1.05);
+  color:;
+  filter: drop-shadow(0 0 10px white);
+}
+
+.grid-container > a:nth-child(4) {
+  grid-column: 2 / span 2;
+}
+
 .gradient-text {
   background: -webkit-linear-gradient(#5e9fcf, #5482b6);
   background: linear-gradient(#5e9fcf, #5482b6);
