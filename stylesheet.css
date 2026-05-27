@@ -239,13 +239,14 @@ body::after {
   width: auto;
   margin: 30px;
   height: 200px;
-  trnsition: transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 #links-on-site a:hover img {
   transform: scale(1.05);
   filter: drop-shadow(0 0 15px white);
 }
+
 #links-on-site {
   text-align: center;
   text-decoration: none;
@@ -267,4 +268,10 @@ body::after {
 #contact-info img {
   width: auto;
   height: 50px;
+  transition: transform 0.5s ease;
+}
+
+#contact-info a:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 5px white);
 }
