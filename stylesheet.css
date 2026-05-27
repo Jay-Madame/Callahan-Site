@@ -160,6 +160,20 @@ body {
   pointer-events: none;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-container div {
+  margin: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
 .gradient-text {
   background: -webkit-linear-gradient(#5e9fcf, #5482b6);
   background: linear-gradient(#5e9fcf, #5482b6);
@@ -175,7 +189,13 @@ body {
     margin-left: 120px;
     width: auto;
     height: 70px;
+    transition: transform 0.5s ease;
   }
+}
+
+#dev-name a:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 5px white);
 }
 
 #links-on-site a img {
