@@ -104,63 +104,6 @@ body {
   overflow-x: hidden;
 }
 
-/* Star layer 1 — twinkles every 4s */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    radial-gradient(4px 4px at 20% 30%, white, transparent),
-    radial-gradient(6px 6px at 40% 70%, white, transparent),
-    radial-gradient(1.5px 1.5px at 50% 20%, white, transparent),
-    radial-gradient(2px 2px at 90% 60%, white, transparent),
-    radial-gradient(1px 1px at 15% 80%, white, transparent),
-    radial-gradient(1.5px 1.5px at 25% 55%, white, transparent),
-    radial-gradient(1px 1px at 55% 85%, white, transparent),
-    radial-gradient(2px 2px at 10% 15%, white, transparent);
-  background-repeat: no-repeat;
-  animation: twinkle 4s ease-in-out infinite;
-}
-
-/* Star layer 2 — twinkles every 6s, offset by 2s so they're out of sync */
-body::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  background-image:
-    radial-gradient(3px 3px at 80% 10%, white 0%, white 30%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 65% 45%, white, transparent),
-    radial-gradient(1px 1px at 35% 15%, white, transparent),
-    radial-gradient(2px 2px at 75% 85%, white, transparent),
-    radial-gradient(1px 1px at 5% 50%, white, transparent),
-    radial-gradient(1.5px 1.5px at 95% 35%, white, transparent),
-    radial-gradient(1px 1px at 45% 5%, white, transparent),
-    radial-gradient(2px 2px at 85% 70%, white, transparent);
-  background-repeat: no-repeat;
-  animation: twinkle 6s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
-@keyframes twinkle {
-  0%,
-  100% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
 @-webkit-keyframes GradientBGShift {
   0% {
     background-position: 59% 0%;
